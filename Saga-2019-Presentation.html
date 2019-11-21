@@ -15,7 +15,7 @@ class: center, middle, inverse, title-slide
 # Regional Income Disparities, Distributional Convergence, and Spatial Effects:
 ## Evidence from Indonesia
 ### Carlos Mendez<br />Associate Professor<br />Graduate School of International Development Nagoya University<br /><br />Anang Budi Gunawan<br />Doctoral Student <br />Graduate School of International Development, Nagoya University<br /><br />Felipe Santos-Marquez<br />Master Student <br />Graduate School of International Development Nagoya University
-### Prepared for the Applied Regional Science Conference (ARSC) 2019 Saga, 23-24 November 2019 <br /><br />[ Slides available at: <a href="https://quarcs-lab.rbind.io/" class="uri">https://quarcs-lab.rbind.io/</a> ]
+### Prepared for the Applied Regional Science Conference (ARSC) 2019 Saga, 23-24 November 2019 <br /><br />[ Slides available at: <a href="https://quarcs-lab.rbind.io" class="uri">https://quarcs-lab.rbind.io</a> ]
 
 ---
 
@@ -24,27 +24,27 @@ class: center, middle, inverse, title-slide
 
 ## Motivation:
 
-- Regional disparity has been the main subject of many studies in Indonesia
+- Large regional differences in income per capita despite several policy efforts (Akita 1988; Garcia and Soelistianingsih 1998; Kataoka 2012)
 
-- Large income differences despite several policy efforts (Akita 1988; Garcia and Soelistianingsih 1998; Kataoka 2012)
-
-- Spatial effects play a small role in provincial convergence (Vidyattama 2013, 2014)
+- Spatial effects play a small role in provincial convergence in Indonesia (Vidyattama 2013, 2014)
 
 ## Research Objective:
   
-- Study the spatio-temporal dynamics of income per capita accross districts in Indonesia over 2000-2017
+- Study the spatio-temporal dynamics of income per capita accross  Indonesian regions using **_a novel district-level dataset_** constructed for the 2000-2017 period
 
 ## Methods:
 
-- Spatial Autocorrelation Moran's I (Moran 1948, Anselin et. al 2006)
+- Classical convergence (Barro and Sala-i-Martin 1992)
 
-- Distributional convergence framework (Quah 1996; Hyndman et. al 1996)
+- Distributional convergence (Quah 1996; Hyndman et. al 1996)
 
-- Getis Filter (Getis 1995; Fischer and Stumpner 2010)
+- Spatial autocorrelation (Moran 1948, Anselin et. al 2006)
+
+- Spatial decomposition (Getis 1995; Fischer and Stumpner 2010)
 
 ## Data:
 
-- 34 provinces and 514 districts over the 2000-2017 period.
+- 514 districts (34 provinces) over the 2000-2017 period.
 
 
 ---
@@ -53,13 +53,17 @@ class: middle
 
 ## Main Results:
 
-1. **Significant and increasing spatial autocorrelation:** ONLY at the districts level 
+1. **_On average_,** convergence at the provincial and district levels
 
-2. **Mostly lack of distributional convergence:** Relative stagnation *at middle* of the distribution
+2. **_Beyond the average_,** lack of distributional convergence
+    - Mostly relative stagnation with some signs of divergence at the tails
 
-3. **Some signs of distributional convergence:** Some mobility *at the extremes (upper and lower tails)* of the distribution
+3. **Significant and increasing spatial autocorrelation:** ONLY at the district level 
 
-4. **Spatial effects play an important role: ** spatial dependece helps reduce disparities and helps avoid income polarization
+4. **Spatial effects play a role in the distribution dynamics** 
+    - Spatial dependece helps reduce extreme disparities
+    
+      - It helps avoid further income polarization
   
 
 
@@ -71,36 +75,35 @@ class: middle
 
 1. **Some Stylized Facts **
 
-  - Convergence at the provincial level?
-  - Convergence at the district level?
-  - Spatial dependence at the district level
+  - **_On average_,** convergence at the provincial and district levels
+  -  **Significant and increasing spatial autocorrelation:** ONLY at the district level
 
-2. **Distributional convergence** 
+2. **Distributional convergence and spatial decomposition frameworks** 
 
   - Distributional convergence framework (intuition)
-  - Getis spatial filter
+  - Spatial decomposition framework (intution)
     
-3. **Main Results**
-  -  Lack of distributional convergence
-  -  Spatial effects help reduce polarization
-  
+3. **Main Results:**
 
+  - **_Beyond the average_,** lack of distributional convergence
+
+  - **Spatial dependece helps reduce extreme disparities** 
+    
+    
 ---
 class: center, middle
 
 # (1) Some Stylized Facts
 
-  Convergence at the provincial level?
+  **_On average_,** convergence at the provincial and district levels
   
-  Convergence at the district level?
-  
-  Spatial dependence at the district level
+  **Significant and increasing spatial autocorrelation:** ONLY at the district level
   
 ---
 
 class: center, middle
 
-## On average, is there convergence at the provincial level?
+## On average,  is there convergence at the provincial level?
 
 &lt;img src="figs/beta_province.png" style="width: 80%" /&gt;
 
@@ -115,7 +118,7 @@ class: center, middle
 ---
 class: center, middle
 
-## Is there a role for spatial dependency?
+## Is spatial dependency _at the district level_ statistically significant? 
 
 
 `$$I = \frac{\sum_i\sum_j w_{ij} z_i.z_j}{\sum_i z_i^2} = \frac{\sum_i (z_i \times \sum_j w_{ij} z_j)}{\sum_i z_i^2}.$$`
@@ -124,7 +127,7 @@ class: center, middle
 
 
 
-Figure 3. Univariate and Differential Moran's I at Districts level.
+Yes, moreover it is increasing over time.
 ---
 
 class: center, middle
@@ -145,22 +148,18 @@ class: middle, center
 ---
 class: middle, center
 
-# Some illustrative patterns
+# Some illustrative patterns of stagnation, convergence, and divergence
 
 &lt;img src="figs/Intra-distribution_dynamics.jpg" style="width: 60%" /&gt;
 
 ---
 class: center, middle
 
-# Getis Spatial Filter
-
-Conducting Getis Spatial Filter to solve the problem of a violation of independence assumption that cause misguided inferences and interpretations (Rey and Janikas, 2005).
-
+# Spatial decomposition framework: The Getis filter
 
 `$$x_i^* = \frac{xi(W_i)}{(n-1)G_i(d_m)}$$`
 
-
-&lt;img src="figs/getis.png" style="width: 70%" /&gt;
+![](figs/decomposition.jpg)
 
 ---
 
@@ -168,50 +167,51 @@ class: center, middle
 
 # (3) Main Results
 
-Distributional convergence and clusters for several years rates
+  (1) **_Beyond the average_,** lack of distributional convergence
 
-Distributional convergence and clusters for dynamic transitions rates
-  
+  (2) **Spatial dependece helps reduce extreme disparities** 
+
+
 ---
 
 class: middle, center
 
-#Distributional convergence and clusters 
-##several years rates
+# Beyond the average, lack of distributional convergence
 
-&lt;img src="figs/Merge_Dist.png" style="width: 70%" /&gt;
+## Mostly relative stagnation and divergence at the extremes
 
-Figure 4. Distributional convergence and clusters for several years rates
+![](figs/rawVariable.jpg)
+
+
 ---
 class: middle, center
 
-#Distributional convergence and clusters 
-##dynamic transitions rates
+# Beyond the average, lack of distributional convergence (further polarization)
 
-&lt;img src="figs/Dynamics_Transition.png" style="width: 70%" /&gt;
+## Distribution dynamics of the non-spatial component
 
-Figure 5. Distributional convergence and clusters for dynamic transitions rates
+![](figs/non-spatial.jpg)
 
 ---
 
 #Concluding Remarks
 
-## Inequality still matters 
+## Classical convergence VS Distributional convergence
 
-- Converge clubs at small group of pooreer and richer.
-- Most regions (medium income level) are persistent.
+- Classical: On average, convergence
+- Distributional: Beyond the average, lack of convergence 
 
-## However,neighboring districs play an important role
-- The economic performance of the districts in general was likely tend to be influenced positively by neighboring districts's performance.
-- Significant role of neighbors effects in reducing inequality. 
+## On the role of space
+- Increasing spatial autocorrelation
+- Geographic neighbors helped reduce some extreme disparities  
 
 ## Implications 
 
-- Call for better coordination of regional policies at the cluster level.
-- Enhance interregional connectivity and cooperation.
+- Beyond the average progress, regional inequality is still an issue 
 - For further research : 
-  - What is the role of geographical neighbors in accelerating  convergence?
-  - Conducting similar approach for different development indicator, such as Human Development Index
+  - Using district-level data, what is the role of geographical neighbors in accelerating  the speed of convergence?
+  - Using the time series of the district-level data, are there convergence clubs?
+  - Integration of spatial and dynamic clusters 
 
 
 ---
@@ -220,8 +220,8 @@ class: center, middle
 
 # Thank you very much for your attention
 
-you can find this presentation on our QuaRCS lab website 
-https://quarcs-lab.rbind.io/
+You can find this presentation on our QuaRCS lab website 
+https://quarcs-lab.rbind.io
 
  &lt;img src="figs/logo2.png" style="width: 20%" /&gt;
 
