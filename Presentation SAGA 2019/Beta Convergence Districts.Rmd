@@ -1,0 +1,69 @@
+---
+title: "Beta Convergence"
+output: 
+  html_notebook:
+    toc: true
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
+    toc_depth: 4
+    number_sections: true
+    code_folding: "hide"
+    theme: "cosmo"
+    highlight: "monochrome"
+---
+
+```{r setup}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+# Install and load the latest version of the follwing packages
+install.packages("devtools")
+library(devtools)
+library(REAT)
+library(tidyverse)
+library(xtable)
+library(knitr)
+library(ExPanDaR)
+library(plotly)
+library(tidyverse)
+
+# Install and load older versions of the following packages
+remove.packages("REAT")
+install_version("REAT", version = "2.1.1", repos = "http://cran.us.r-project.org")
+library(REAT)
+
+
+# Change the presentation of decimal numbers to 4 and avoid scientific notation
+options(prompt="R> ", digits=2, scipen=999)
+```
+
+
+# Use the package `tidyverse` to import the data:
+
+# Import the data
+
+```{r}
+library(readr)
+dist <- read_csv("District_new.csv")
+#View(dist)
+dist
+
+```
+
+```{r}
+sigma_log_RGDPPC <- sigmaconv (dist$RGDPPC2000, 2000, dist$RGDPPC2017, 2017,
+                         sigma.measure = "sd",
+                         sigma.log = TRUE, # Fist take log of x, and then do the analysis
+                         sigma.issample = TRUE,
+                         output.results = TRUE)
+```
+
+```{r}
+beta_log_RGDPPC <- betaconv.ols (dist$RGDPPC2000, 2000, dist$RGDPPC2017, 2017,
+                       beta.plot = TRUE,
+                       beta.plotLine = TRUE,
+                       beta.plotX = "Ln (Regional GDP Per Capita in 2000)", 
+                       beta.plotY = "Annual Growth Rate 2000-2017", 
+                       beta.plotTitle = "",
+                       output.results = TRUE)
+ggsave("beta_district1.png")
+```
