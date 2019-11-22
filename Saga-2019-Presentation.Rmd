@@ -123,6 +123,18 @@ $$I = \frac{\sum_i\sum_j w_{ij} z_i.z_j}{\sum_i z_i^2} = \frac{\sum_i (z_i \time
 
 
 Yes, moreover it is increasing over time.
+
+---
+class: center, middle
+
+# How do we compute the statial weights matrix?
+
+Original feature: We use the locations of capital cities to estimate Thiessen polygons and recover a contiguity matrix from distance data. 
+
+![](figs/contiguity-polygons.jpg)
+
+
+
 ---
 
 class: center, middle
